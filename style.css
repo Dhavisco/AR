@@ -1,0 +1,38 @@
+body {
+    background-color: #ffffff;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 32px 2rem;
+}
+
+.menu-icon{
+    height:32px;
+    width: 32px;
+    cursor: pointer;
+}
+
+.name{
+    font-size: 64px;
+    font-family: 'Clicker Script', cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.rsvp{
+    background-color: #151515;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+    padding: 16px 32px;
+    display: flex;
+    font-family: 'Jost', sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 23.12px;
+}
