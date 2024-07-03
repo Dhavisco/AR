@@ -1,12 +1,22 @@
 body {
     background-color: #ffffff;
+    margin: 0;
 }
 
 header{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 32px 2rem;
+   display: flex;
+justify-content: space-between;
+align-items: center;
+
+    padding: 1rem 2rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: -webkit-fill-available;
+    background-color: white;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Add shadow for better visibility */
+
 }
 
 .menu-icon{
@@ -35,4 +45,682 @@ header{
     font-size: 16px;
     font-weight: 500;
     line-height: 23.12px;
+}
+
+@media(max-width:768px){
+
+    header{
+        padding: 0.7rem 1.2rem;
+
+    }
+    .menu-icon {
+  height: 1.5rem;
+  width: 1.5rem;
+}
+
+.name {
+  font-size: 3rem;
+  font-family: 'Clicker Script', cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.rsvp {
+  padding: 0.3rem 0.8rem;
+  display: flex;
+  font-family: 'Jost', sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-size: 0.8rem;
+  font-weight: 500;
+  line-height: 23.12px;
+}
+
+.hero{
+  /* Smaller Screen */
+  margin-top: 90px; /*Adjust based on header height */ 
+}
+
+}
+
+/*Hero Section*/
+
+
+.hero {
+  text-align: center; /* Center text horizontally */
+  height: 901px; /* Set the height you want for the hero section */
+overflow: hidden; /* Hide overflow to cut the image */
+position: relative;
+}
+
+.image-overlay {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.image-overlay::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+
+.couplesbg{
+    width: 100%;
+height: auto; /* Maintain aspect ratio */
+object-fit: cover; /* Ensures the image covers the entire container */
+object-position: center; /* Adjust the position to show the desired part of the image */
+display: block;
+}
+
+.hero-text {
+    font-weight: 200;
+    text-align: center;
+    position: absolute;
+    width: max-content;
+    top: 65%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust for the offset caused by the top and left positioning */
+    color: #FFEC9E; /* Adjust text color for readability */
+    z-index: 4; /*display text on image*/
+
+}
+
+.hero-text .title{
+    font-family: 'Dancing Script', cursive;
+    font-size: 150px;
+    
+
+}
+.hero-text p {
+    margin: 1.5rem 0;
+ font-family: 'Cinzel', serif;
+ font-size: 48px;
+
+}
+
+/* Styles for mobile devices */
+
+@media (max-width: 1024px) {
+  .hero {
+    height: 50rem;
+  }
+
+  .hero-text .title {
+    font-size: 6.5rem;
+  }
+
+  .hero-text p {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    height: 400px;
+  }
+
+  .hero-text .title {
+    font-size: 3.5rem;
+  }
+
+  .hero-text p {
+    font-size: 1.7rem;
+  }
+}
+
+/* details section */
+.details {
+  margin: 8rem 0.5rem 4rem;
+  display: flex;
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+/* Base styles for desktop */
+.date-details {
+  display: flex;
+  width: 60%;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.vertical-text {
+  writing-mode: vertical-lr;
+  text-orientation: sideways;
+  transform: rotate(180deg);
+  font-size: 5.2rem; /* Adjust font size as needed */
+  font-family: 'Cinzel', serif;
+  color: #0000001a; /* Light color similar to your example */
+  font-weight: 400;
+  letter-spacing: 2px;
+  height: max-content;
+}
+
+.d-place {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  justify-content: end;
+  align-items: center;
+  font-family: 'Cinzel', serif;
+}
+
+.date-title {
+  font-size: 2rem;
+  line-height: 48.53px;
+  color: #0000001a;
+  font-weight: 500;
+}
+
+.date-text {
+  font-size: 2.5rem;
+  line-height: 64.7px;
+}
+
+.details-image {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  position: relative;
+  width: 35%;
+  height: 25rem; /* Adjust height as needed */
+}
+
+.details-image img {
+  position: absolute;
+  width: auto;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.details-image img:first-child {
+  z-index: 1; /* Bottom image */
+}
+
+.details-image img:last-child {
+  margin-top: 22rem;
+  width: 68%;
+  height: auto;
+  z-index: 2; /* Top image */
+  transform: rotate(12deg);
+}
+
+/* Medium screens (tablets, small desktops) */
+@media (max-width: 1024px) {
+  .details {
+    flex-direction: row;
+    gap: 3rem;
+    align-items: center;
+    justify-content: center;
+    margin: 4rem 1rem;
+    margin-bottom: 16rem;
+  }
+
+  .date-details {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  .vertical-text {
+    font-size: 4rem; /* Adjust font size as needed */
+    writing-mode: horizontal-tb;
+text-orientation: upright;
+transform: rotate(0deg);
+text-align: center;
+
+  }
+
+  .d-place {
+    gap: 2rem;
+  }
+
+  .details-image {
+    width: 100%;
+    height: 30rem; /* Adjust height as needed */
+    margin-top: 2rem;
+    display: flex;
+justify-content: center;
+
+  }
+
+  .details-image img:last-child {
+    margin-top: 20rem;
+    width: 23rem;
+  }
+}
+
+/* Small screens (mobile devices) */
+@media (max-width: 768px) {
+  .details {
+    flex-direction: column;
+    align-items: center;
+    margin: 4rem 1rem;
+    margin-bottom: 8rem;
+  }
+
+  .date-details {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .vertical-text {
+    font-size: 2.5rem; /* Adjust font size as needed */
+  }
+  .d-place {
+    gap: 1rem;
+    justify-content: center;
+  }
+
+  .date-title{
+    font-size: 2rem;
+  }
+
+  .date-text{
+    font-size: 2.3rem;
+  }
+
+ .details-image {
+  width: 100%;
+  height: 20rem; /* Adjust height as needed */
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.details-image img:last-child {
+  margin-top: 16rem;
+  width: 15rem;
+}
+
+}
+
+
+
+/* Photos Session */
+.photos{
+    margin: 4rem 0.5rem 4rem;
+}
+
+.section-title{
+    font-size: 6rem;
+    font-weight: 400;
+    font-family: 'Dancing Script', cursive;
+    margin-bottom: 2rem;
+    text-align: center;
+
+}
+
+/* Photo Grid*/
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(
+    7,
+    1fr
+  ); /* Create a grid with 7 equal columns */
+  gap: 10px; /* Adjust the gap between grid items */
+  padding: 20px;
+  grid-auto-rows: 200px; /* Set a uniform row height */
+  align-items: stretch; /* Stretch items to fill the grid cell */
+}
+
+.grid-container > div,
+.grid-container > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.item1 {
+  grid-column: span 3; /* Span across three columns */
+  grid-row: span 3; /* Span across three rows */
+}
+
+.grid-item {
+  grid-column: span 2; /* Span across two columns */
+  grid-row: span 3; /* Span across three rows */
+}
+
+.grid-inner {
+  grid-column: span 2; /* Span across two columns */
+  grid-row: span 3; /* Span across three rows */
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Adjust the gap between inner grid items */
+  height: 100%; /* Ensure it matches the height of other items */
+}
+
+.grid-inner-div {
+  width: 100%;
+  height: 49.2%; /* Each inner image takes half the height of the grid-inner */
+  object-fit: cover;
+  object-position: top; /* Prioritize the top part of the image */
+}
+
+/* Medium screens (tablets, small desktops) */
+@media (max-width: 1024px) {
+  .grid-container {
+    grid-template-columns: repeat(
+      4,
+      1fr
+    ); /* Create a grid with 4 equal columns */
+    grid-auto-rows: 10rem; /* Adjust row height */
+  }
+
+  .item1 {
+    grid-column: span 2; /* Span across two columns */
+    grid-row: span 2; /* Span across two rows */
+    object-fit: cover;
+object-position: top;
+
+  }
+
+  .grid-item {
+    grid-column: span 2; /* Span across two columns */
+    grid-row: span 2; /* Span across two rows */
+  }
+
+  .grid-inner {
+    grid-column: span 4; /* Span across two columns */
+    grid-row: span 4; /* Span across two rows */
+    display: flex; 
+    flex-direction: row;
+    
+  }
+
+  .grid-inner-div {
+    height: 49.2%; /* Each inner image takes half the height of the grid-inner */
+  }
+}
+
+/* Small screens (mobile devices) */
+@media (max-width: 768px) {
+  .grid-container {
+    grid-template-columns: repeat(
+      2,
+      1fr
+    ); /* Create a grid with 2 equal columns */
+    grid-auto-rows: 20rem; /* Adjust row height */
+  }
+
+
+  .item1,
+  .grid-item,
+  .grid-inner {
+    grid-column: span 2; /* Span across all columns */
+    grid-row: span 2; /* Span across one row */
+    object-fit: cover;
+    object-position: top;
+
+  }
+
+  .grid-inner {
+    flex-direction: row; /* Change to row direction for small screens */
+  }
+
+  .grid-inner-div {
+    width: 49.2%; /* Each inner image takes half the width of the grid-inner */
+    height: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .grid-container {
+    grid-template-columns: repeat(
+      2,
+      1fr
+    ); /* Create a grid with 2 equal columns */
+    grid-auto-rows: 40rem; /* Adjust row height */
+  }
+
+  .item1,
+  .grid-item,
+  .grid-inner {
+    grid-column: span 2; /* Span across all columns */
+    grid-row: span 1; /* Span across one row */
+    object-fit: cover;
+    object-position: top;
+  }
+
+  .grid-inner {
+    flex-direction: column; /* Change to row direction for small screens */
+    grid-column: span 2; /* Span across all columns */
+    grid-row: span 1; /* Span across one row */
+
+}
+
+  .grid-inner-div {
+    width: 100%; /* Each inner image takes half the width of the grid-inner */
+    height: 100%;
+    grid-column: span 2; /* Span across all columns */
+grid-row: span 2; /* Span across one row */
+
+  }
+}
+
+
+/* Story Session */
+.story{
+margin: 4rem 0.5rem 4rem;
+}
+
+.story-grid{
+    display: grid;
+    grid-template-columns: auto auto;
+    margin: 2rem;
+    gap: 5rem;
+    line-height: 1.6rem;
+    letter-spacing: 0.8px;
+}
+
+.story-info{
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 1.1rem;
+    display: grid;
+    gap: 1.5rem;
+    font-weight: 400;
+}
+
+.perp{
+    font-weight: 500;
+}
+
+@media (max-width: 768px) {
+.story-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.story-info{
+    gap: 1rem;
+}
+
+}
+
+@media (max-width: 480px) {
+.story{
+    margin-top: 25rem;
+}
+}
+@media (max-width: 400px) {
+  .story {
+    margin-top: 18rem;
+  }
+}
+
+
+.schedule{
+    text-align: center;
+    font-size: 1.1rem;
+   margin: 4rem 0.5rem 4rem;
+
+}
+
+.schedule-details{
+    font-family: 'Cinzel', serif;
+}
+
+.finer-details{
+margin: 4rem 0.5rem 4rem;
+}
+
+.fdetails-container{
+    display: flex;
+    flex-direction: row;
+    gap: 4rem;
+    justify-content: space-between;
+    margin: 2rem;
+}
+
+.fdetails-img{
+    
+    /* width: 30%; */
+    height: auto;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    margin-right: 1rem;
+}
+
+.f-img{
+    width: 22rem;
+    height: auto;
+    transform: rotate(7deg);
+    border-radius: 10px;
+
+}
+
+.fdetails-text{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 70%;
+}
+.fdetails-content{
+    font-family: 'Jost', sans-serif;
+    font-size: 1.5rem;
+    word-spacing: 0.3rem;
+    letter-spacing: 0.1rem;
+    gap: 0.8rem;
+    display: flex;
+    flex-direction: column
+ ;
+}
+
+.fdetails-info{
+    font-weight: 300;
+}
+
+@media(max-width: 768px){
+    .fdetails-container {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  margin: 2rem;
+}
+
+.fdetails-img {
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 1rem;
+}
+
+.f-img {
+  width: 16rem;
+  height: auto;
+  transform: rotate(7deg);
+  border-radius: 10px;
+}
+
+.fdetails-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+}
+
+}
+
+/* RSVP Invite Section */
+.srsvp{
+    text-align: center;
+    margin: 4rem 0.5rem 4rem;
+}
+.rsvp-title{
+    font-family: 'Cinzel', serif;
+    font-weight: 400;
+    font-size: 5rem;
+}
+
+.rsvp-info{
+    font-family: 'Jost', sans-serif;
+    font-weight: 300;
+    font-size: 1.5rem;
+}
+
+.srsvpbutton-div{
+    display: flex;
+    justify-content: center;
+    margin: 3rem;
+}
+.srsvp-button{
+     background-color: #151515;
+     border-radius: 5px;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+    padding: 16px 32px;
+    display: flex;
+    font-family: 'Jost', sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 23.12px;
+}
+
+footer{
+    font-weight: 400;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin: 3rem;
+
+}
+
+.f-date{
+    font-family: 'Cinzel', serif;
+    font-size: 3rem;
+   text-transform: uppercase;
+}
+
+.f-logo{
+   font-family: 'Clicker Script', cursive;
+   font-size: 6rem;
+}
+
+@media(max-width: 768px){
+    .f-date {
+  font-size: 2rem;
+}
+.f-logo {
+  font-family: 'Clicker Script', cursive;
+  font-size: 5rem;
+}
+
 }
