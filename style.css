@@ -197,7 +197,7 @@ display: block;
   transform: rotate(180deg);
   font-size: 5.2rem; /* Adjust font size as needed */
   font-family: 'Cinzel', serif;
-  color: #0000001a; /* Light color similar to your example */
+  color: #00000050; /* Light color similar to your example */
   font-weight: 400;
   letter-spacing: 2px;
   height: max-content;
@@ -216,7 +216,7 @@ display: block;
 .date-title {
   font-size: 2rem;
   line-height: 48.53px;
-  color: #0000001a;
+  color: #00000050;
   font-weight: 500;
 }
 
@@ -723,4 +723,12 @@ footer{
   font-size: 5rem;
 }
 
+.section-title{
+    font-size: 4rem;
 }
+.rsvp-title {
+  font-size: 4rem;
+}
+
+}
+
