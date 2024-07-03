@@ -169,6 +169,16 @@
             <div class="f-logo">A + R</div>
         </footer>
     </main>
-    
+    <script>
+       window.addEventListener('scroll', function() {
+           const header = document.querySelector('header');
+           if (window.scrollY > 0) {
+               header.classList.add('scrolled');
+           } else {
+               header.classList.remove('scrolled');
+           }
+       });
+   </script>
+
 </body>
 </html>
