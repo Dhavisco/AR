@@ -3,15 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="Adetoun, Rilwan, Adetoun & Rilwan, wedding invite, AR, A+R">
+    <meta name="description" content="A Wedding Invitation to Adetoun & Rilwan union. #ARomanticaffair">
     <link rel="stylesheet" href="/style.css">
+    <link rel="icon" href="assets/couples7.jpeg" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Clicker+Script&family=Jost:ital,wght@0,100..900;1,100..900&family=Cinzel:wght@400..900&family=Dancing+Script:wght@400..700&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
-    <title>AR</title>
+    <title>Adetoun & Rilwan</title>
 </head>
 <body>
-    <header>
-      
+
+<div id="preloader">
+       <div class="loader"></div>
+   </div>
+
+   <div id="content">
+  <header>
         <div><img src="/assets/menu.png" alt="" class="menu-icon"></div>
         <div class="name">A + R</div>
         <button class="rsvp">RSVP</button>
@@ -169,7 +177,25 @@
             <div class="f-logo">A + R</div>
         </footer>
     </main>
+   </div>
+
+  
     <script>
+
+// load Function
+            window.addEventListener('load', function() {
+         // Fade-in animation for page load
+              document.body.classList.add('loaded');
+            document.getElementById('content').classList.add('loaded');
+
+             //Preloader 
+           setTimeout(function() {
+               const preloader = document.getElementById('preloader');
+               preloader.style.display = 'none';
+           }, 4000); // delay time in milliseconds (3000ms = 3 seconds)
+       });
+
+// Scroll Function
        window.addEventListener('scroll', function() {
            const header = document.querySelector('header');
            if (window.scrollY > 0) {
