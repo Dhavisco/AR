@@ -184,14 +184,15 @@
 
 // load Function
             window.addEventListener('load', function() {
-         // Fade-in animation for page load
-              document.body.classList.add('loaded');
-            document.getElementById('content').classList.add('loaded');
 
              //Preloader 
            setTimeout(function() {
                const preloader = document.getElementById('preloader');
                preloader.style.display = 'none';
+
+                // Fade-in animation for page load
+              document.body.classList.add('loaded');
+            document.getElementById('content').classList.add('loaded');
            }, 4000); // delay time in milliseconds (3000ms = 3 seconds)
        });
 
