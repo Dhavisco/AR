@@ -22,7 +22,7 @@
   <header>
         <div><img src="/assets/menu.png" alt="" class="menu-icon"></div>
         <div class="name">A + R</div>
-        <button class="rsvp">RSVP</button>
+        <button class="rsvp" onclick="openModal()">RSVP</button>
         
     </header>
 
@@ -168,7 +168,7 @@
                 Please Reply by 1st of November
             </div>
             <div class="srsvpbutton-div">
-            <button class="srsvp-button">RSVP Now</button>
+            <button class="srsvp-button" onclick="openModal()">RSVP Now</button>
             </div>
         </section>
 
@@ -179,7 +179,58 @@
     </main>
    </div>
 
+  <!-- Modal -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+        <!-- <span class="close" onclick="closeModal()">&times;</span> -->
+
+        <div id="modal-form">
+
+            <div class="modal-head">
+                <div class="modal-title">Will you be joining us?</div>
+                <div class="modal-info">Please Reply by 1st of November</div>
+            </div>
+
+            <form id="rsvpForm">
+                <div class="data">
+                    <div class="label"><label for="name">Name</label></div>    
+                    <input type="text" id="name" name="name">
+                </div>
+                <div class="data">
+                    <div class="label"><label for="guests">Number of Guests:</label></div>
+                    <input type="number" id="guests" name="guests">
+                </div>
+         <div class="option">
+        <div class="label">Would you be attending</div>
+        <div>
+            <input type="radio" id="accept" name="attendance" value="Glady accepts">
+            <label for="accept" class="select">Glady accepts</label> 
+        </div>
+        
+        <div>
+            <input type="radio" id="reject" name="attendance" value="Regretfully Decline">
+            <label for="reject" class="select">Regretfully Decline</label> 
+        </div>
+    </div>
+
+                <input class="submit" id="submit" type="submit" value="Submit">
+            </form>
+        </div>
+
+              <div id="thankYouMessage">
+            <div class="modal-head">
+                <div class="modal-title">Thank you!</div>
+                <div class="modal-info">We have received your response.</div>
+                <button class="b-home" onclick="closeModal()">Go back Home</button>
+            </div>  
+
+        </div>
+
   
+        </div>
+    </div>
+
+
     <script>
 
 // load Function
@@ -205,6 +256,33 @@
                header.classList.remove('scrolled');
            }
        });
+
+        // Modal functionality
+        const modal = document.getElementById("myModal");
+
+        function openModal() {
+            modal.style.display = "flex";
+        }
+
+        function closeModal() {
+            modal.style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
+        document.getElementById('rsvpForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent the default form submission
+    
+    // Hide the form
+    document.getElementById('modal-form').style.display = 'none';
+    
+    // Show the thank you message
+    document.getElementById('thankYouMessage').style.display = 'block';
+});
    </script>
 
 </body>
